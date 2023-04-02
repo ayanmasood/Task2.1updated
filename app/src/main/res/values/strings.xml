@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">A1</string>
-    
+
     <string-array name="sWeights">
         <item>pound</item>
         <item>ounce</item>

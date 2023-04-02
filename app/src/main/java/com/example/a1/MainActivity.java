@@ -2,6 +2,7 @@ package com.example.a1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,6 +22,8 @@ Button mButton;
 Spinner spinner;
 Spinner spinner2;
 EditText oText;
+Button tButton;
+Button lButton;
 
 
 
@@ -35,6 +38,23 @@ EditText oText;
         Spinner spinner= findViewById(R.id.spinner1);
         Spinner spinner1=findViewById(R.id.spinner);
         EditText oText=findViewById(R.id.textView2);
+        Button tButton= findViewById(R.id.button2);
+        Button lButton= findViewById(R.id.button3);
+
+        //onclick
+        tButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity2();
+            }
+        });
+        lButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity3();
+            }
+        });
+
 
         //Linking array with spinner
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this, R.array.sWeights, android.R.layout.simple_spinner_item);
@@ -149,5 +169,13 @@ EditText oText;
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+    public void openActivity2(){
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }
+    public void openActivity3(){
+        Intent intent = new Intent(this, MainActivity3.class);
+        startActivity(intent);
     }
 }
